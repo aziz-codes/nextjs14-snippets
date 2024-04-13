@@ -1,7 +1,13 @@
 "use client";
 import { useState, createContext, useContext } from "react";
-
-const initialState = {};
+type AppState = {
+  sidebarOpen: boolean;
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const initialState: AppState = {
+  sidebarOpen: false, // Or true, depending on your default value
+  setSidebarOpen: () => {}, // Dummy function to satisfy the type
+};
 
 const AppContext = createContext(initialState);
 
@@ -10,7 +16,7 @@ export const AppContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <AppContext.Provider value={{ sidebarOpen, setSidebarOpen }}>
