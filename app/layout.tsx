@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
-import Navbar from "@/components/Navbar";
-
+import { AppContextProvider } from "@/context/Context";
+import Wrapper from "./Wrapper";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,13 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
-          <Sidebar />
-          <main className="flex flex-col ml-0 sm:ml-20 lg:ml-64 bg-red-500 w-full overflow-hidden">
-            <Navbar />
-            {children}
-          </main>
-        </div>
+        <AppContextProvider>
+          <Wrapper>{children}</Wrapper>
+        </AppContextProvider>
       </body>
     </html>
   );
