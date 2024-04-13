@@ -8,8 +8,8 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
     <div className="flex">
       <Sidebar />
       <main
-        className={`flex flex-col ml-0 sm:ml-20 transition-all duration-150 ease-linear ${
-          sidebarOpen ? "!ml-60" : "!ml-20 "
+        className={`flex flex-col ml-0  transition-all duration-150 ease-linear ${
+          sidebarOpen ? "md:ml-60" : "!ml-20 "
         }  w-full overflow-hidden`}
       >
         <Navbar />

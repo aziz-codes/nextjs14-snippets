@@ -10,7 +10,7 @@ const Sidebar = () => {
   return (
     <div
       className={`hidden fixed h-screen w-0 md:flex   transition-width duration-150 ease-linear ${
-        sidebarOpen ? "!w-60" : "w-20"
+        sidebarOpen ? "!w-60" : "md:w-20"
       } bg-sky-500 px-3 py-3 flex flex-col gap-3 items-center`}
       ref={sidebarRef}
     >
